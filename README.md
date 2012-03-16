@@ -8,6 +8,8 @@ This is an easy to use node.js wrapper for the SlideShare REST API.
 
 ## Usage
 
+Initialize a SlideShare object with your api key and secret, and call the methods documented in `lib/slideshare.js`.
+
 ```js
 var SlideShare = require('slideshare');
 
