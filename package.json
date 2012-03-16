@@ -9,7 +9,9 @@
     "url": "git://github.com/adityab/node-slideshare.git"
   },
   "main": "lib/slideshare.js",
-  "dependencies": {},
+  "dependencies": {
+      "restler": ""
+    },
   "devDependencies": {},
   "optionalDependencies": {},
   "engines": {
