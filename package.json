@@ -2,7 +2,7 @@
   "author": "Aditya Bhatt <aditya@adityabhatt.org> (http://adityabhatt.org)",
   "name": "slideshare",
   "description": "SlideShare API wrapper for node.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "http://github.com/adityab/node-slideshare",
   "repository": {
     "type": "git",

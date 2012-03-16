@@ -1,0 +1,135 @@
+info it worked if it ends with ok
+verbose cli [ 'node', '/usr/bin/npm', 'publish' ]
+info using npm@1.1.4
+info using node@v0.6.12
+verbose /usr/bin/node node symlink
+verbose config file /home/skynet/.npmrc
+verbose config file /usr/etc/npmrc
+verbose config file /usr/lib/nodejs/npm/npmrc
+verbose publish [ '.' ]
+verbose caching /home/skynet/Code/node-slideshare/package.json
+verbose loadDefaults slideshare@0.1.0
+info prepublish slideshare@0.1.0
+verbose cache add [ '.', null ]
+silly cache add: name, spec, args [ undefined, '.', [ '.', null ] ]
+verbose parsed url { pathname: '.', path: '.', href: '.' }
+verbose caching package.json
+verbose loadDefaults slideshare@0.1.0
+verbose pack /home/skynet/Code/node-slideshare
+verbose pack /home/skynet/Code/node-slideshare /tmp/npm-1331869101139/1331869101139-0.8361997483298182/tmp.tgz
+silly makeList /home/skynet/Code/node-slideshare
+silly dir, dirLen [ '/home/skynet/Code/node-slideshare', 34 ]
+verbose tarball /tmp/npm-1331869101139/1331869101139-0.8361997483298182/tmp.tgz
+verbose parent /home/skynet/Code/node-slideshare
+verbose mkdir (expected) error ENOENT, no such file or directory '/tmp/npm-1331869101139/1331869101139-0.8361997483298182/___package.npm'
+verbose mkdir done: /tmp/npm-1331869101139/1331869101139-0.8361997483298182/___package.npm 755
+verbose unpack_ uid, gid [ undefined, undefined ]
+verbose unpackTarget /tmp/npm-1331869101139/1331869101139-0.8361997483298182/package
+silly gunzTarPerm modes [ '755', '644' ]
+silly afterUntar ok
+silly asyncMap in gTP /tmp/npm-1331869101139/1331869101139-0.8361997483298182/___package.npm/node-slideshare
+silly asyncMap in gTP /tmp/npm-1331869101139/1331869101139-0.8361997483298182/___package.npm/node-slideshare/README.md
+silly asyncMap in gTP /tmp/npm-1331869101139/1331869101139-0.8361997483298182/___package.npm/node-slideshare/package.json
+silly asyncMap in gTP /tmp/npm-1331869101139/1331869101139-0.8361997483298182/___package.npm/node-slideshare/.npmignore
+silly asyncMap in gTP /tmp/npm-1331869101139/1331869101139-0.8361997483298182/___package.npm/node-slideshare/lib
+silly asyncMap in gTP /tmp/npm-1331869101139/1331869101139-0.8361997483298182/___package.npm/node-slideshare/lib/slideshare.js
+silly asyncMap in gTP /tmp/npm-1331869101139/1331869101139-0.8361997483298182/___package.npm/node-slideshare/lib/utils.js
+silly chmod node-slideshare 755
+silly chmod README.md 644
+silly chmod package.json 644
+silly chmod .npmignore 644
+silly chmod lib 755
+silly chmod slideshare.js 644
+silly chmod utils.js 644
+verbose gunzed /tmp/npm-1331869101139/1331869101139-0.8361997483298182/___package.npm/node-slideshare
+verbose rm'ed /tmp/npm-1331869101139/1331869101139-0.8361997483298182/package
+verbose renamed [ '/tmp/npm-1331869101139/1331869101139-0.8361997483298182/___package.npm/node-slideshare',
+verbose renamed   '/tmp/npm-1331869101139/1331869101139-0.8361997483298182/package' ]
+verbose caching /tmp/npm-1331869101139/1331869101139-0.8361997483298182/package/package.json
+verbose loadDefaults slideshare@0.1.0
+verbose tarball contents [ 'package', 'tmp.tgz' ]
+verbose from cache /tmp/npm-1331869101139/1331869101139-0.8361997483298182/package/package.json
+verbose pack /tmp/npm-1331869101139/1331869101139-0.8361997483298182/package
+verbose pack /tmp/npm-1331869101139/1331869101139-0.8361997483298182/package /home/skynet/.npm/slideshare/0.1.0/package.tgz
+silly makeList /tmp/npm-1331869101139/1331869101139-0.8361997483298182/package
+silly dir, dirLen [ '/tmp/npm-1331869101139/1331869101139-0.8361997483298182/package',
+silly dir, dirLen   64 ]
+verbose tarball /home/skynet/.npm/slideshare/0.1.0/package.tgz
+verbose parent /tmp/npm-1331869101139/1331869101139-0.8361997483298182/package
+verbose mkdir (expected) error ENOENT, no such file or directory '/home/skynet/.npm/slideshare/0.1.0/___package.npm'
+verbose mkdir done: /home/skynet/.npm/slideshare/0.1.0/___package.npm 755
+verbose unpack_ uid, gid [ undefined, undefined ]
+verbose unpackTarget /home/skynet/.npm/slideshare/0.1.0/package
+silly gunzTarPerm modes [ '755', '644' ]
+silly afterUntar ok
+silly asyncMap in gTP /home/skynet/.npm/slideshare/0.1.0/___package.npm/package
+silly asyncMap in gTP /home/skynet/.npm/slideshare/0.1.0/___package.npm/package/README.md
+silly asyncMap in gTP /home/skynet/.npm/slideshare/0.1.0/___package.npm/package/package.json
+silly asyncMap in gTP /home/skynet/.npm/slideshare/0.1.0/___package.npm/package/.npmignore
+silly asyncMap in gTP /home/skynet/.npm/slideshare/0.1.0/___package.npm/package/lib
+silly asyncMap in gTP /home/skynet/.npm/slideshare/0.1.0/___package.npm/package/lib/slideshare.js
+silly asyncMap in gTP /home/skynet/.npm/slideshare/0.1.0/___package.npm/package/lib/utils.js
+silly chmod package 755
+verbose gunzed /home/skynet/.npm/slideshare/0.1.0/___package.npm/package
+verbose rm'ed /home/skynet/.npm/slideshare/0.1.0/package
+verbose renamed [ '/home/skynet/.npm/slideshare/0.1.0/___package.npm/package',
+verbose renamed   '/home/skynet/.npm/slideshare/0.1.0/package' ]
+verbose caching /home/skynet/.npm/slideshare/0.1.0/package/package.json
+verbose loadDefaults slideshare@0.1.0
+silly updated sha bytes 2165
+info shasum 3d3550d742c433775d5307b5b86ed6230570b59e
+info shasum /home/skynet/.npm/slideshare/0.1.0/package.tgz
+verbose from cache /home/skynet/.npm/slideshare/0.1.0/package/package.json
+verbose chmod /home/skynet/.npm/slideshare/0.1.0/package.tgz 644
+verbose chown [ '/home/skynet/.npm/slideshare/0.1.0/package.tgz', 1001, 1001 ]
+silly publish { author: 
+silly publish    { name: 'Aditya Bhatt',
+silly publish      email: 'aditya@adityabhatt.org',
+silly publish      url: 'http://adityabhatt.org' },
+silly publish   name: 'slideshare',
+silly publish   description: 'SlideShare API wrapper for node.js',
+silly publish   version: '0.1.0',
+silly publish   homepage: 'http://github.com/adityab/node-slideshare',
+silly publish   repository: 
+silly publish    { type: 'git',
+silly publish      url: 'git://github.com/adityab/node-slideshare.git' },
+silly publish   main: 'lib/slideshare.js',
+silly publish   dependencies: { restler: '' },
+silly publish   devDependencies: {},
+silly publish   optionalDependencies: {},
+silly publish   engines: { node: '*' },
+silly publish   _npmUser: { name: 'adityab', email: 'aditya@adityabhatt.org' },
+silly publish   _id: 'slideshare@0.1.0',
+silly publish   _engineSupported: true,
+silly publish   _npmVersion: '1.1.4',
+silly publish   _nodeVersion: 'v0.6.12',
+silly publish   _defaultsLoaded: true,
+silly publish   dist: 
+silly publish    { shasum: '3d3550d742c433775d5307b5b86ed6230570b59e',
+silly publish      tarball: 'http://registry.npmjs.org/slideshare/-/slideshare-0.1.0.tgz' } }
+verbose raw, before any munging slideshare
+verbose url resolving [ 'http://registry.npmjs.org/', './slideshare' ]
+verbose url resolved http://registry.npmjs.org/slideshare
+http PUT http://registry.npmjs.org/slideshare
+http 409 http://registry.npmjs.org/slideshare
+verbose raw, before any munging slideshare
+verbose url resolving [ 'http://registry.npmjs.org/', './slideshare' ]
+verbose url resolved http://registry.npmjs.org/slideshare
+http GET http://registry.npmjs.org/slideshare
+http 200 http://registry.npmjs.org/slideshare
+info Already published slideshare@0.1.0
+verbose uploading bin dists []
+ERR! publish fail Cannot publish over existing version.
+ERR! publish fail Bump the 'version' field, set the --force flag, or
+ERR! publish fail     npm unpublish 'slideshare@0.1.0'
+ERR! publish fail and try again
+ERR! 
+ERR! System Linux 3.0.0-16-generic
+ERR! command "node" "/usr/bin/npm" "publish"
+ERR! cwd /home/skynet/Code/node-slideshare
+ERR! node -v v0.6.12
+ERR! npm -v 1.1.4
+ERR! code EPUBLISHCONFLICT
+ERR! message publish fail
+ERR! errno {}
+verbose exit [ 1, true ]
