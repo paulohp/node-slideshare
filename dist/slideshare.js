@@ -1,3 +1,5 @@
+'use strict';
+
 var rest = require('restler');
 
 var crypto = require('crypto');
@@ -9,7 +11,7 @@ function sha1(data) {
     return generator.digest('hex');
 }
 
-var SlideShare = function(key, secret) {
+var SlideShare = function SlideShare(key, secret) {
     this.api_key = key;
     this.secret = secret;
 };
@@ -20,15 +22,15 @@ SlideShare.prototype = {
     api_url: 'https://www.slideshare.net/api/2/',
 
     // The timestamp
-    timestamp: function() {
+    timestamp: function timestamp() {
         return Math.round(new Date().getTime() / 1000);
     },
     // The hash method: returns the current hash
-    currentHash: function() {
+    currentHash: function currentHash() {
         return sha1(this.secret + this.timestamp());
     },
     // Get core parameters required in every API call
-    coreParams: function() {
+    coreParams: function coreParams() {
         return {
             parser: rest.parsers.xml,
             data: {
@@ -36,7 +38,7 @@ SlideShare.prototype = {
                 ts: this.timestamp(),
                 hash: this.currentHash()
             }
-        }
+        };
     },
 
     // API Calls
@@ -45,8 +47,8 @@ SlideShare.prototype = {
      * @param {string} id The id of the slideshow
      * @return {Object} A slideshow object
      */
-    getSlideshowById: function(id, opts, callback) {
-        if (typeof opts === "function") {
+    getSlideshowById: function getSlideshowById(id, opts, callback) {
+        if (typeof opts === 'function') {
             callback = opts;
             opts = {};
         }
@@ -59,8 +61,8 @@ SlideShare.prototype = {
      * @param {string} slideShareUrl The url of the slideshow
      * @return {Object} A slideshow object
      */
-    getSlideshowByURL: function(slideShareUrl, opts, callback) {
-        if (typeof opts === "function") {
+    getSlideshowByURL: function getSlideshowByURL(slideShareUrl, opts, callback) {
+        if (typeof opts === 'function') {
             callback = opts;
             opts = {};
         }
@@ -74,12 +76,12 @@ SlideShare.prototype = {
         this.getSlideshow(opts, callback);
     },
 
-    getSlideshow: function(opts, callback) {
+    getSlideshow: function getSlideshow(opts, callback) {
         var params = this.coreParams();
         for (var key in opts) {
             params.data[key] = opts[key];
         }
-        rest.get(this.api_url + 'get_slideshow', params).on('complete', function(data) {
+        rest.get(this.api_url + 'get_slideshow', params).on('complete', function (data) {
             return callback(data);
         });
     },
@@ -90,15 +92,15 @@ SlideShare.prototype = {
      * @param {Object} opts Optional parameters, for example { limit: 10, offset: 2, detailed: true }, or null.
      * @return {Object} An object containing an array of slideshows
      */
-    getSlideshowsByTag: function(tag, opts, callback) {
+    getSlideshowsByTag: function getSlideshowsByTag(tag, opts, callback) {
         var params = this.coreParams();
         params.data.tag = tag;
-        if(opts != null) {
+        if (opts != null) {
             params.data.limit = opts.limit;
             params.data.offset = opts.offset;
             params.data.detailed = opts.detailed;
         }
-        rest.get(this.api_url + 'get_slideshows_by_tag', params).on('complete', function(data) {
+        rest.get(this.api_url + 'get_slideshows_by_tag', params).on('complete', function (data) {
             return callback(data);
         });
     },
@@ -109,15 +111,15 @@ SlideShare.prototype = {
      * @param {Object} opts Optional parameters, for example { limit: 10, offset: 2, detailed: true }, or null.
      * @return {Object} An object containing an array of slideshows
      */
-    getSlideshowsByGroup: function(group_name, opts, callback) {
+    getSlideshowsByGroup: function getSlideshowsByGroup(group_name, opts, callback) {
         var params = this.coreParams();
         params.data.group_name = group_name;
-        if(opts != null) {
+        if (opts != null) {
             params.data.limit = opts.limit;
             params.data.offset = opts.offset;
             params.data.detailed = opts.detailed;
         }
-        rest.get(this.api_url + 'get_slideshows_by_group', params).on('complete', function(data) {
+        rest.get(this.api_url + 'get_slideshows_by_group', params).on('complete', function (data) {
             return callback(data);
         });
     },
@@ -128,11 +130,11 @@ SlideShare.prototype = {
      * @param {Object} opts Optional parameters, for example { username: 'john', password: 'doe', limit: 10, offset: 2, detailed: true, get_unconverted: false }, or null.
      * @return {Object} An object containing an array of slideshows
      */
-    getSlideshowsByUser: function(username_for, opts, callback) {
+    getSlideshowsByUser: function getSlideshowsByUser(username_for, opts, callback) {
         var params = this.coreParams();
         params.data.username_for = username_for;
-        if(opts != null) {
-            if(opts.username != undefined && opts.password != undefined) {
+        if (opts != null) {
+            if (opts.username != undefined && opts.password != undefined) {
                 params.data.username = opts.username;
                 params.data.password = opts.password;
             }
@@ -141,7 +143,7 @@ SlideShare.prototype = {
             params.data.detailed = opts.detailed;
             params.data.get_unconverted = opts.get_unconverted;
         }
-        rest.get(this.api_url + 'get_slideshows_by_user', params).on('complete', function(data) {
+        rest.get(this.api_url + 'get_slideshows_by_user', params).on('complete', function (data) {
             return callback(data);
         });
     },
@@ -152,10 +154,10 @@ SlideShare.prototype = {
      * @param {Object} opts Optional parameters, for example { page: 2, items_per_page: 10, lang: 'en', sort: 'latest', fileformat: 'pdf', detailed: true }, or null.
      * @return {Object} An object containing an array of slideshows
      */
-    searchSlideshows: function(q, opts, callback) {
+    searchSlideshows: function searchSlideshows(q, opts, callback) {
         var params = this.coreParams();
         params.data.q = q;
-        if(opts != null) {
+        if (opts != null) {
             params.data.detailed = opts.detailed;
             params.data.page = opts.page;
             params.data.items_per_page = opts.items_per_page;
@@ -170,7 +172,7 @@ SlideShare.prototype = {
             params.data.cc_adapt = opts.cc_adapt;
             params.data.cc_commercial = opts.cc_commercial;
         }
-        rest.get(this.api_url + 'search_slideshows', params).on('complete', function(data) {
+        rest.get(this.api_url + 'search_slideshows', params).on('complete', function (data) {
             return callback(data);
         });
     },
@@ -181,16 +183,16 @@ SlideShare.prototype = {
      * @param {Object} opts Optional parameters, for example { username: 'john', password: 'doe' }, or null.
      * @return {Object} An object containing an array of groups
      */
-    getUserGroups: function(username_for, opts, callback) {
+    getUserGroups: function getUserGroups(username_for, opts, callback) {
         var params = this.coreParams();
         params.data.username_for = username_for;
-        if(opts != null) {
-            if(opts.username != undefined && opts.password != undefined) {
+        if (opts != null) {
+            if (opts.username != undefined && opts.password != undefined) {
                 params.data.username = opts.username;
                 params.data.password = opts.password;
             }
         }
-        rest.get(this.api_url + 'get_user_groups', params).on('complete', function(data) {
+        rest.get(this.api_url + 'get_user_groups', params).on('complete', function (data) {
             return callback(data);
         });
     },
@@ -201,10 +203,10 @@ SlideShare.prototype = {
      * @param {string} username_for username of owner of slideshows
      * @return {Object} An object containing an array of favorites
      */
-    getUserFavorites: function(username_for, callback) {
+    getUserFavorites: function getUserFavorites(username_for, callback) {
         var params = this.coreParams();
         params.data.username_for = username_for;
-        rest.get(this.api_url + 'get_user_favorites', params).on('complete', function(data) {
+        rest.get(this.api_url + 'get_user_favorites', params).on('complete', function (data) {
             return callback(data);
         });
     },
@@ -216,15 +218,15 @@ SlideShare.prototype = {
      * @param {Object} opts Optional parameters, for example { limit: 10, offset: 2 }, or null.
      * @return {Object} An object containing an array of contacts
      */
-    getUserContacts: function(username_for, opts, callback) {
+    getUserContacts: function getUserContacts(username_for, opts, callback) {
         var params = this.coreParams();
         params.data.username_for = username_for;
-        if(opts != null) {
+        if (opts != null) {
             params.data.limit = opts.limit;
             params.data.offset = opts.offset;
         }
         console.log(params);
-        rest.get(this.api_url + 'get_user_contacts', params).on('complete', function(data) {
+        rest.get(this.api_url + 'get_user_contacts', params).on('complete', function (data) {
             return callback(data);
         });
     },
@@ -235,14 +237,15 @@ SlideShare.prototype = {
      * @param {string} password password
      * @return {Object} An object containing an array of Tags
      */
-    getUserTags: function(username, password, callback) {
+    getUserTags: function getUserTags(username, password, callback) {
         var params = this.coreParams();
         params.data.username = username;
         params.data.password = password;
-        rest.get(this.api_url + 'get_user_tags', params).on('complete', function(data) {
+        rest.get(this.api_url + 'get_user_tags', params).on('complete', function (data) {
             return callback(data);
         });
     }
 };
 
 module.exports = SlideShare;
+//# sourceMappingURL=slideshare.js.map

@@ -4,18 +4,18 @@ var babel = require('gulp-babel');
 var path = require('path');
 
 var paths = {
-    src: ['src/**/*.js'],
+    lib: ['lib/**/*.js'],
     dist: 'dist',
-    sourceRoot: path.join(__dirname, 'src'),
+    sourceRoot: path.join(__dirname, 'lib'),
 };
 gulp.task('babel', function () {
-    return gulp.src(paths.src)
+    return gulp.src(paths.lib)
         .pipe(sourcemaps.init())
         .pipe(babel())
         .pipe(sourcemaps.write('.', { sourceRoot: paths.sourceRoot }))
         .pipe(gulp.dest(paths.dist));
 });
 gulp.task('watch', function() {
-    gulp.watch(paths.src, ['babel']);
+    gulp.watch(paths.lib, ['babel']);
 });
 gulp.task('default', ['watch']);
