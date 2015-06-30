@@ -8,7 +8,7 @@
     "type": "git",
     "url": "git://github.com/adityab/node-slideshare.git"
   },
-  "main": "lib/slideshare.js",
+  "main": "dist/slideshare.js",
   "dependencies": {
     "restler": ""
   },
